@@ -1,0 +1,6 @@
+{
+  "name": "Conceptual School System",
+  "description": "Official institutional website for Conceptual School System, Faisalabad, presenting campus facilities, academics (Grades 1 to 12, O/A Levels), fee structure, calendar, and admissions info.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

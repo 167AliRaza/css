@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conceptual School System | Faisalabad Campus</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      (function(){
+        var hostOrigin=window.location.origin;
+        var iframe=document.createElement('iframe');
+        iframe.src='http://localhost:5173/widget?widget_key=3ca13d9a-02b8-4372-a684-622519ea0f3a&parent_origin=' + encodeURIComponent(hostOrigin);
+        iframe.setAttribute('title','CampusConnect Widget');
+        iframe.style.position='fixed';
+        iframe.style.right='24px';
+        iframe.style.bottom='24px';
+        iframe.style.width='72px';
+        iframe.style.height='72px';
+        iframe.style.border='0';
+        iframe.style.zIndex='2147483647';
+        iframe.style.background='transparent';
+        iframe.style.overflow='hidden';
+        iframe.style.borderRadius='24px';
+        iframe.style.boxShadow='0 18px 50px rgba(15,23,42,0.18)';
+        document.body.appendChild(iframe);
+        window.addEventListener('message',function(event){
+          if(event.source!==iframe.contentWindow) return;
+          var data=event.data || {};
+          if(data.type==='campusconnect-widget-resize'){
+            iframe.style.width=(data.width || 72)+'px';
+            iframe.style.height=(data.height || 72)+'px';
+            iframe.style.borderRadius=data.open ? '24px' : '24px';
+          }
+        });
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
